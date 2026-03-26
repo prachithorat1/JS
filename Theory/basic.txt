@@ -1,1 +1,365 @@
+Javascript
+
+26/03/26
+
+Variables
+A JavaScript variable is a container for storing data. For example,
+let num = 5;
+Here, num is a variable that stores the number 5.
+
+
+What is the difference between var and let?
+Both var and let are used to declare variables. However, there are some differences between them.
+var	let
+var is used in older versions of JavaScript.	let is the new way of declaring variables, starting with ES6 (ES2015).
+Variables created with var are function-scoped, meaning they can be accessed anywhere within the function they were defined in.	Variables declared with let are block-scoped, meaning they can only be accessed within the block where they were declared.
+For example, var x;	For example, let y;
+
+
+Initialize Variables in JavaScript
+We use the assignment operator = to assign a value to a variable.
+// declare variable num
+let num;
+
+// assign 5 to num
+num = 5;
+Here, 5 is assigned to the variable num.
+You can also initialize variables during its declaration.
+// declare variable num1 and assign 5 to it
+let num1 = 5;
+
+// declare variable num2 and assign 6 to it
+let num2 = 6;
+
+
+// declare variables num1, num2, and num3
+// assign values 5, 6, and 7 respectively
+let num1 = 5, num2 = 6, num3 = 7;
+
+Use a variable without initializing it.
+If you use a variable without initializing it, it will have an undefined value.
+// declare variable num
+let num; 
+
+// print num
+console.log(num); 
+
+// Output: undefined
+•	Variable names are case-sensitive. So age and Age are different variables. For example,
+let age = 23;
+let Age = 20;
+
+console.log(age); // 23
+console.log(Age); // 20
+
+Always Initialize a Constant During Declaration
+If you do not initialize a constant at the time of declaration, it throws an error. For example,
+// Error! Missing initializer in const declaration
+const x;
+
+// attempt to initialize constant after declaration
+x = 5;
+
+console.log(x)
+
+
+Data Types
+Data types represent the different kinds of values we can use in JavaScript.
+There are altogether 8 basic data types in JavaScript.
+Data Type	Description	Example
+String	Textual data.	'hello', "hello world!", etc.
+Number	An integer or a floating-point number.	3, 3.234, 3e-2, etc.
+BigInt	An integer with arbitrary precision.	900719925124740999n, 1n, etc.
+Boolean	Any of two values: true or false.	true and false
+undefined	A data type whose variable is not initialized.	let a;
+null	Denotes a null value.	let a = null;
+Symbol	A data type whose instances are unique and immutable.	let value = Symbol('hello');
+Object	Key-value pairs of collection of data.	let student = {name: "John"};
+Note: JavaScript data types are divided into primitive and non-primitive types.
+•	Primitive Data Types: They can hold a single simple value. String, Number, BigInt, Boolean, undefined, null, and Symbol are primitive data types.
+•	Non-Primitive Data Types: They can hold multiple values. Objects are non-primitive data types.
+
+String
+A string represents textual data. It contains a sequence of characters. For example, "hello", "JavaScript", etc.
+In JavaScript, strings are surrounded by quotes:
+
+For example,
+// string enclosed within single quotes
+let fruit = 'apple';
+console.log(fruit)
+
+// string enclosed within double quotes
+let country = "USA";
+console.log(country);
+
+// string enclosed within backticks
+let result = `fail`;
+console.log(result);
+
+Number
+In JavaScript, the number type represents numeric values (both integers and floating-point numbers).
+•	Integers - Numeric values without any decimal parts. Example: 3, -74, etc.
+•	Floating-Point - Numeric values with decimal parts. Example: 3.15, -1.3, etc.
+// integer value
+let integer_number = -3;
+console.log(integer_number);
+
+// floating-point value
+let float_number = 3.15;
+console.log(float_number);
+
+BigInt
+BigInt is a type of number that can represent very large or very small integers beyond the range of the regular number data type.
+Note: The regular number data type can handle values less than (2^53 - 1) and greater than -(2^53 - 1).
+A BigInt number is created by appending n to the end of an integer. For example,
+// BigInt value
+let value1 = 900719925124740998n;
+
+// add two big integers
+let result1 = value1 + 1n;
+console.log(result1);  // "900719925124740999n"
+
+let value2 = 900719925124740998n;
+
+ undefined
+In JavaScript, undefined represents the absence of a value.
+If a variable is declared but the value is not assigned, then the value of that variable will be undefined. For example,
+let name;
+console.log(name);  // undefined
+
+null
+In JavaScript, null represents "no value" or "nothing." For example,
+let number = null;
+console.log(number);  // null
+Run Code
+Here, let number = null; indicates that the number variable is set to have no value.
+
+ Symbol
+A Symbol is a unique and primitive value. This data type was introduced in ES6.
+When you create a Symbol, JavaScript guarantees that it is distinct from all other symbols, even if they have the same descriptions. For example,
+// two symbols with the same description
+let value1 = Symbol("programiz");
+let value2 = Symbol("programiz");
+
+console.log(value1 === value2);  // false
+Run Code
+Here, we have used === to compare value1 and value2. It returns true if the two values are exactly the same. Otherwise, it returns false.
+Though both value1 and value2 contain "programiz", JavaScript treats them as different since they are of the Symbol type. Hence, value1 === value2 returns false.
+
+Object
+An Object holds data in the form of key-value pairs. For example,
+let student = {
+    firstName: "John",
+    lastName: null,
+    class: 10
+};
+Here, we have created an object named student that contains key-value pairs:
+Key	Value
+firstName	"John"
+lastName	null
+class	10
+
+Operators
+JavaScript operators are special symbols that perform operations on one or more operands (values).
+Operator Types
+Here is a list of different JavaScript operators you will learn in this tutorial:
+1.	Arithmetic Operators
+                
+Operator	Name	Example
++	Addition	3 + 4 // 7
+-	Subtraction	5 - 3 // 2
+*	Multiplication	2 * 3 // 6
+/	Division	4 / 2 // 2
+%	Remainder	5 % 2 // 1
+++	Increment (increments by 1)	++5 or 5++ // 6
+--	Decrement (decrements by 1)	--4 or 4-- // 3
+**	Exponentiation (Power)	4 ** 2 // 16
+
+let x = 5;
+
+// addition operator
+console.log("Addition: x + 3 = ", x + 3);
+
+// subtraction operator
+console.log("Subtraction: x - 3 =", x - 3);
+
+// multiplication operator
+console.log("Multiplication: x * 3 =", x * 3);
+
+// division operator
+console.log("Division: x / 3 =", x / 3);
+
+// remainder operator
+console.log("Remainder: x % 3 =", x % 3);
+
+// increment operator
+console.log("Increment: ++x =", ++x);
+
+// decrement operator
+console.log("Decrement: --x =", --x);
+
+// exponentiation operator
+console.log("Exponentiation: x ** 3 =", x ** 3);
+
+Note: The increment operator ++ adds 1 to the operand. And, the decrement operator -- decreases the value of the operand by 1.
+Increment ++ and Decrement -- Operator as Prefix and Postfix
+In programming (Java, C, C++, JavaScript etc.), the increment operator ++ increases the value of a variable by 1. Similarly, the decrement operator -- decreases the value of a variable by 1.
+a = 5
+++a;          // a becomes 6
+a++;          // a becomes 7
+--a;          // a becomes 6
+a--;          // a becomes 5
+Simple enough till now. However, there is an important difference when these two operators are used as a prefix and a postfix.
+________________________________________
+++ and -- operator as prefix and postfix
+•	If you use the ++ operator as a prefix like: ++var, the value of var is incremented by 1; then it returns the value.
+•	If you use the ++ operator as a postfix like: var++, the original value of var is returned first; then var is incremented by 1.
+The -- operator works in a similar way to the ++ operator except -- decreases the value by 1.
+
+2.	Assignment Operators
+             
+Operator	Name	Example
+=	Assignment Operator	a = 7;
++=	Addition Assignment	a += 5; // a = a + 5
+-=	Subtraction Assignment	a -= 2; // a = a - 2
+*=	Multiplication Assignment	a *= 3; // a = a * 3
+/=	Division Assignment	a /= 2; // a = a / 2
+%=	Remainder Assignment	a %= 2; // a = a % 2
+**=	Exponentiation Assignment	a **= 2; // a = a**2
+
+// assignment operator
+let a = 7;
+console.log("Assignment: a = 7, a =", a);
+
+// addition assignment operator
+a += 5;  // a = a + 5
+console.log("Addition Assignment: a += 5, a =", a);
+
+// subtraction assignment operator
+a -= 5;  // a = a - 5
+console.log("Subtraction Assignment: a -= 5, a =", a);
+
+// multiplication assignment operator
+a *= 2;  // a = a * 2
+console.log("Multiplication Assignment: a *= 2, a =", a);
+
+// division assignment operator
+a /= 2;  // a = a / 2
+console.log("Division Assignment: a /= 2, a =", a);
+
+// remainder assignment operator
+a %= 2;  // a = a % 2
+console.log("Remainder Assignment: a %= 2, a =", a);
+
+// exponentiation assignment operator
+a **= 2;  // a = a**2
+console.log("Exponentiation Assignment: a **= 7, a =", a);
+
+3.	Comparison Operators
+   We use comparison operators to compare two values and return a boolean value (true or false). For example,
+4.	const a = 3, b = 2;
+5.	console.log(a > b);
+6.	
+7.	// Output: true 
+
+Here, we have used the > comparison operator to check whether a (whose value is 3) is greater than b (whose value is 2).
+Since 3 is greater than 2, we get true as output.
+Note: In the above example, a > b is called a boolean expression since evaluating it results in a boolean value.
+Commonly Used Comparison Operators
+Operator	Meaning	Example
+==	Equal to	3 == 5 gives us false
+!=	Not equal to	3 != 4 gives us true
+>	Greater than	4 > 4 gives us false
+<	Less than	3 < 3 gives us false
+>=	Greater than or equal to	4 >= 4 gives us true
+<=	Less than or equal to	3 <= 3 gives us true
+===	Strictly equal to	3 === "3" gives us false
+!==	Strictly not equal to	3 !== "3" gives us true
+________________________________________
+Example 3: Comparison Operators in JavaScript
+// equal to operator
+console.log("Equal to: 2 == 2 is", 2 == 2);
+
+// not equal operator
+console.log("Not equal to: 3 != 3 is", 3 != 3);
+
+// strictly equal to operator
+console.log("Strictly equal to: 2 === '2' is", 2 === '2');
+
+// strictly not equal to operator
+console.log("Strictly not equal to: 2 !== '2' is", 2 !== '2');
+
+// greater than operator
+console.log("Greater than: 3 > 3 is", 3 > 3);
+
+// less than operator
+console.log("Less than: 2 > 2 is", 2 > 2);
+
+// greater than or equal to operator
+console.log("Greater than or equal to: 3 >= 3 is", 3 >= 3);
+
+// less than or equal to operator
+console.log("Less than or equal to: 2 <= 2 is", 2 <= 2);
+
+8.	Logical Operators
+9.	We use logical operators to perform logical operations on boolean expressions. For example,
+10.	const x = 5, y = 3;
+11.	console.log((x < 6) && (y < 5));
+12.	
+13.	// Output: true
+14.	Run Code
+15.	Here, && is the logical operator AND. Since both x < 6 and y < 5 are true, the combined result is true.
+16.	Commonly Used Logical Operators
+Operator	Syntax	Description
+&& (Logical AND)	expression1 && expression2	true only if both expression1 and expression2 are true
+|| (Logical OR)	expression1 || expression2	true if either expression1 or expression2 is true
+! (Logical NOT)	!expression	false if expression is true and vice versa
+17.	________________________________________
+18.	Example 4: Logical Operators in JavaScript
+19.	let x = 3;
+20.	
+21.	// logical AND
+22.	console.log((x < 5) && (x > 0));  // true
+23.	console.log((x < 5) && (x > 6));  // false
+24.	
+25.	// logical OR
+26.	console.log((x > 2) || (x > 5));  // true
+27.	console.log((x > 3) || (x < 0));  // false
+28.	
+29.	// logical NOT
+30.	console.log(!(x == 3));  // false
+31.	console.log(!(x < 2));  // true
+
+32.	Bitwise Operators
+
+We use bitwise operators to perform binary operations on integers.
+Operator	Description	Example
+&	Bitwise AND	5 & 3 // 1
+|	Bitwise OR	5 | 3 // 7
+^	Bitwise XOR	5 ^ 3 // 6
+~	Bitwise NOT	~5 // -6
+<<	Left shift	5 << 1 // 10
+>>	Sign-propagating right shift	-10 >> 1 // -5
+>>>	Zero-fill right shift	-10 >>> 1 // 2147483643
+
+33.	String Operators
+34.	In JavaScript, you can also use the + operator to concatenate (join) two strings. For example,
+35.	let str1 = "Hel", str2 = "lo";
+36.	console.log(str1 + str2);
+37.	
+38.	// Output: Hello
+39.	Run Code
+40.	Here, we used the + operator to concatenate str1 and str2.
+
+41.	Miscellaneous Operators
+
+JavaScript has many more operators besides the ones we listed above. You will learn about them in detail in later tutorials.
+Operator	Description	Example
+,	Comma: Evaluates multiple operands and returns the value of the last operand.	let a = (1, 3, 4); // 4
+?:	Ternary: Returns value based on the condition.	(50 > 40) ? "pass" : "fail"; // "pass"
+typeof	Returns the data type of the variable.	typeof 3; // "number"
+instanceof	Returns true if the specified object is a valid object of the specified class.	objectX instanceof ClassX
+void	Discards any expression's return value.	void(x) // undefined
+
+
 
